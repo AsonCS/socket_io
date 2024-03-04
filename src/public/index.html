@@ -43,11 +43,11 @@
     <form id="form" action="">
         <label class="formrow">
             Fps:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input id="fps" name="fps" type="number" value="30" max="60" min="0" step="6" />
+            <input id="fps" name="fps" type="number" value="23" max="30" min="1" step="2" />
         </label>
         <label class="formrow">
             Quality:
-            <input id="quality" name="quality" type="number" value="50" max="100" min="0" step="10" />
+            <input id="quality" name="quality" type="number" value="50" max="100" min="10" step="10" />
         </label>
         <label class="formrow">
             Scale:&nbsp;&nbsp;&nbsp;
@@ -67,9 +67,9 @@
                 'screencast',
                 {
                     actionId: 'actionId',
-                    fps: fps.value > 0 && fps.value <= 60 ? fps.value : 30,
-                    quality: quality.value > 0 && quality.value <= 100 ? quality.value : 50,
-                    scale: scale.value > 0 && scale.value <= 1 ? scale.value : 0.5,
+                    fps: fps.value > 0 && fps.value <= 30 ? fps.value : 30,
+                    quality: quality.value >= 10 && quality.value <= 100 ? quality.value : 50,
+                    scale: scale.value >= 0.1 && scale.value <= 1 ? scale.value : 0.5,
                     playback: 1
                 }
             )
